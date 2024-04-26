@@ -310,7 +310,17 @@ data = {
                         }
                     }
                 }, 
-                'non': None
+                'non': {'question': "Êtes vous au chomage ?", 
+                    'oui': {'question': "Vous êtes au chomage !", 
+                        'oui': None, 
+                        'non': None}, 
+                    'non': {'question': "Êtes vous étudiant ?", 
+                        'oui': {'question': "Vous êtes étudiant !", 
+                            'oui': None, 
+                            'non': None}, 
+                        'non': {'question': "Je ne peux pas vous aider !", 
+                            'oui': None, 
+                            'non': None}}}
                             }},
     'non': {'question': "Êtes vous au chomage ?", 
             'oui': None, 

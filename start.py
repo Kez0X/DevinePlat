@@ -5,7 +5,7 @@ from data import *
 def start():
     Arbre = ABR("Avez vous un métier ?")
     init(data, Arbre)
-    Arbre.parcours()
+    return question(Arbre)
 
 def init(data, Arbre):
     """
@@ -29,5 +29,18 @@ def init(data, Arbre):
         Arbre.ajouterFilsGauche(ABR(data['non']['question']))
         init(data['non'], Arbre.filsGauche)
         init(data['oui'], Arbre.filsDroit)
+
+def question(Arbre):
+    if Arbre.filsDroit is None and Arbre.filsGauche is None: 
+        # C'est la réponse
+        return Arbre.racine
+    else :
+        choix = str(input(Arbre.racine))
+        if choix == "Oui" or choix=="oui" or choix =="o" or choix =="O":
+            return question(Arbre.filsDroit)
+        else :
+            return question(Arbre.filsGauche)
+
+
 
 print(start())

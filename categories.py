@@ -1,4 +1,7 @@
 # Définition des catégories et des métiers associés
+
+# Si vous le souhaitez vous pouvez rajouter des métiers avec des catégories pour plus de challenge
+
 categories = {
     "Éducation": [
         "Enseignant",

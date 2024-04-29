@@ -3,8 +3,9 @@ from categories import *
 
 def ajoutMetier(metier, categorie):
     """
-    Ajoute un métier avec sa catégorie dans le fichier CSV.
+    Fonction : Ajoute un métier avec sa catégorie dans le fichier CSV.
     Entrée : metier : str Le nom du métier à ajouter. categorie : str La catégorie du métier.
+    Sortie : le dictionnaires avec l'ajout
     """
     # Nom du fichier CSV
     fichier_csv = 'metiers.csv'
@@ -14,6 +15,7 @@ def ajoutMetier(metier, categorie):
         writer = csv.writer(csvfile)
         writer.writerow([categorie, metier])
     
+    # Ajout du métier dans le dictionnaire
     categories[categorie] = metier
 
     print(f"Le métier '{metier}' a été ajouté à la catégorie '{categorie}'.")

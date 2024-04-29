@@ -2,8 +2,13 @@ import csv
 import random
 
 def generationCsv(categories):
-    # Générer 40 métiers aléatoirement à partir du jeu de donnée
-    # On va toujours faire en sorte d'avoir un jeu de donnée différents
+    """
+    Fonction : Génère un fichier csv à partir d'un dictionnaire
+    Entrée : categories un dictionnaire
+    Sortie : ///
+    """
+    # On génère 40 métiers aléatoirement à partir du jeu de donnée
+    # On va toujours faire en sorte d'avoir un jeu de donnée différent
     metiers = []
     for _ in range(40):
         categorie = random.choice(list(categories.keys()))
@@ -14,7 +19,7 @@ def generationCsv(categories):
             metier = random.choice(categories[categorie])
         metiers.append({"Catégorie": categorie, "Métier": metier})
 
-    # Écrire les métiers dans un fichier CSV
+    # On écrit les métiers dans un fichier CSV
     with open("metiers.csv", "w", newline="", encoding="utf-8") as csvfile:
         csvfile.truncate(0)
         fieldnames = ["Catégorie", "Métier"]

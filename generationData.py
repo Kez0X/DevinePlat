@@ -35,7 +35,8 @@ def affichageCsv(fichier_csv):
         # Créer un lecteur CSV
         lecteur_csv = csv.reader(csvfile)
         # Lire chaque ligne du fichier CSV
+        print("Vous pouvez choisir parmis ces 40 métiers")
         for ligne in lecteur_csv:
             # Afficher la ligne (chaque ligne est une liste)
-            print(ligne)
+            print(ligne[1])
                 

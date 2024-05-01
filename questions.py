@@ -1,4 +1,4 @@
-
+# Initialisation du disctionnaire de questions
 
 questions = {
     "italien" : "Votre plat est il italien ?",

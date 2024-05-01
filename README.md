@@ -1,6 +1,6 @@
-# Qui est-ce ?
+# DevinePlat ?
 
-Ceci est un projet d'université pour devinez à quel plat vous pensez à partir d'un jeu de donnée.
+Ceci est un projet d'université pour devinez à quel plat vous pensez à partir d'un jeu de donné.
 Utilisation de la biblothèque **re**.
 
 ## Le fichier requirements.txt

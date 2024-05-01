@@ -24,7 +24,8 @@ def start():
         if verificationReponse(reponse):
             for keys in dicoPlat:
                 if dicoPlat[keys][question]==False:
-                    # On supprime la ligne entière grâce à la clé
+                    # On supprime la ligne entière grâce à la clé qu'on va ajouter dans la liste pour supprimer cela plus tard
+                    # On fait ça pour éviter d'avoir une erreur de modification de la boucle au niveau du dictionnaire
                     listeSupp.append(keys)
         # On fait de même dans le cas contraire
         else:

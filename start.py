@@ -1,9 +1,7 @@
-from main import *
 from categories import categories
-from generationData import *
-from main import *
-from trouveCategories import *
-from trouveMetier import *
+from questions import questions
+from verificationReponse import *
+from affichage import *
 
 def start():
     """
@@ -12,25 +10,31 @@ def start():
     Sortie : ///
     """
     # On va générer le jeu du J1
-    print("Bienvenue sur DevineJob...\nLancement du programme...")
-    # On génère le fichier csv
-    generationCsv(categories)
-    # On propose à l'utilisateur de rajouter un métier
-    reponse = str(input("Souhaitez vous rajouter un métier ?"))
-    while verificationReponse(reponse):
-        metier = str(input("Quel métier souhaitez vous rajouter ?"))
-        categorie = str(input("À quelle catégorie appartient votre métier ?"))
-        # On ajoute le métier au fichier csv et au dictionnaire
-        categories[categorie] = ajoutMetier(metier, categorie)
-        reponse = str(input("Souhaitez vous rajouter un métier ?"))
-    # On affiche le contenu du fichier csv
-    affichageCsv('metiers.csv')
-    print("Choisissez votre métier... Je vais essayer de le deviner")
-    # Le J1 a choisit son métier, maintenant nous devons trouver la catégorie et le métier
-    types, data = main()
-    cat = [elements for elements in types]
-    categorieTrouve = trouveCategories(cat)
-    metierTrouve = trouveMetier(data,categorieTrouve)
-    return metierTrouve
-
+    print("Bienvenue sur DevinePlat...\nLancement du programme...\nChargement des ingrédients...\n\nVoici une liste des plats, choisissez en un parmi tous cela :\n")
+    affichage(categories)
+    # Initialisation du dictionnaire avec pandas
+    dicoPlat = categories.copy()
+    # On va parcourir les différentes questions de notre dictionnaires de questions 
+    # On va poser nos questions une par une
+    for question in questions:
+        reponse = str(input(questions[question]))
+        # On initilise la liste des elements qu'on devra supprimer
+        listeSupp = []
+        # Si la réponse à la question est positive alors on a juste à supprimer toutes les lignes ou la reponse est négative donc False
+        if verificationReponse(reponse):
+            for keys in dicoPlat:
+                if dicoPlat[keys][question]==False:
+                    # On supprime la ligne entière grâce à la clé
+                    listeSupp.append(keys)
+        # On fait de même dans le cas contraire
+        else:
+            for keys in dicoPlat:
+                if dicoPlat[keys][question]:
+                    listeSupp.append(keys)
+        # On n'a plus qu'à supprimer les elements dans listeSupp
+        for eltToSup in listeSupp:
+            del dicoPlat[eltToSup]
+    rep = "Votre plat est : " + str(list(dicoPlat.keys())[0])
+    return rep 
+    
 print(start())

@@ -1,7 +1,7 @@
 # Qui est-ce ?
 
-Ceci est un projet d'université pour devinez à quel métier vous pensez à partir d'un jeu de donnée.
-Utilisation des biblothères **re**, **csv**.
+Ceci est un projet d'université pour devinez à quel plat vous pensez à partir d'un jeu de donnée.
+Utilisation de la biblothèque **re**.
 
 ## Le fichier requirements.txt
 

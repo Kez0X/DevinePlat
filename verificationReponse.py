@@ -7,4 +7,5 @@ def verificationReponse(reponse):
     Sortie : bool : True si la réponse est positive, False sinon.
     """
     # Utilisation d'une expression régulière pour rechercher les réponses positives
+    # Documentation regex
     return bool(re.match(r'^\s*(oui|en effet)', reponse, re.IGNORECASE))

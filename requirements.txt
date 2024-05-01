@@ -1,1 +1,1 @@
-re
+python -m pip install re

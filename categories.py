@@ -1,6 +1,8 @@
 # Définition des catégories et des métiers associés
 
 # Si vous le souhaitez vous pouvez rajouter des plats avec des catégories pour plus de challenge, seulement il faut aussi rajouter les options à tous les plats
+# Ce dictionnaire est fait pour couvrir 3 questions soit 8 réponses, bien entendu il est possible de couvrir plus de questions en rajoutant des options
+
 
 categories = {
     "Risotto au poisson" : {

@@ -9,10 +9,10 @@ def start():
     Entrée : ///
     Sortie : ///
     """
-    # On va générer le jeu du J1
     print("Bienvenue sur DevinePlat...\nLancement du programme...\nChargement des ingrédients...\n\nVoici une liste des plats, choisissez en un parmi tous cela :\n")
+    # On affiche les categories pour que l'utilisateur puisse faire un choix
     affichage(categories)
-    # Initialisation du dictionnaire avec pandas
+    # On initilise le dictionnaire à la copie du dictionnaires des catégories
     dicoPlat = categories.copy()
     # On va parcourir les différentes questions de notre dictionnaires de questions 
     # On va poser nos questions une par une
@@ -35,7 +35,13 @@ def start():
         # On n'a plus qu'à supprimer les elements dans listeSupp
         for eltToSup in listeSupp:
             del dicoPlat[eltToSup]
-    rep = "Votre plat est : " + str(list(dicoPlat.keys())[0])
+    # Si notre dictionnaire est bien fait alors il n'est censé resté qu'un seul élément
+    # Au cas où nous prévoyons tout de même les autres cas
+    if len(list(dicoPlat.keys())) == 0:
+        rep = "Votre plat est : " + str(list(dicoPlat.keys())[0])
+    else:
+        rep = "Une erreur s'est produite, une mise à jour au niveau du dictionnaire est requise"
+
     return rep 
     
 print(start())

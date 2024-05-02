@@ -37,7 +37,7 @@ def start():
             del dicoPlat[eltToSup]
     # Si notre dictionnaire est bien fait alors il n'est censé resté qu'un seul élément
     # Au cas où nous prévoyons tout de même les autres cas
-    if len(list(dicoPlat.keys())) == 0:
+    if len(list(dicoPlat.keys())) == 1:
         rep = "Votre plat est : " + str(list(dicoPlat.keys())[0])
     else:
         rep = "Une erreur s'est produite, une mise à jour au niveau du dictionnaire est requise"
